@@ -66,7 +66,7 @@
 #include <stdint.h>
 #endif // defined
 #endif // DEC_NO_CPP11
-
+#include <cmath>
 // <--
 
 // --> define DEC_MAX_INTxx, DEC_MIN_INTxx if required
