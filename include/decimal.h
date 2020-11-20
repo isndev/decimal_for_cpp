@@ -636,28 +636,28 @@ public:
     decimal() noexcept : m_value(0) {}
     decimal(const decimal &src) = default;
 #endif
-    explicit decimal(uint value) {
+    decimal(uint value) {
         init(value);
     }
-    explicit decimal(int value) {
+    decimal(int value) {
         init(value);
     }
-    explicit decimal(int64 value) {
+    decimal(int64 value) {
         init(value);
     }
-    explicit decimal(xdouble value) {
+    decimal(xdouble value) {
         init(value);
     }
-    explicit decimal(double value) {
+    decimal(double value) {
         init(value);
     }
-    explicit decimal(float value) {
+    decimal(float value) {
         init(value);
     }
-    explicit decimal(int64 value, int64 precFactor) {
+    decimal(int64 value, int64 precFactor) {
         initWithPrec(value, precFactor);
     }
-    explicit decimal(const std::string &value) {
+    decimal(const std::string &value) {
         fromString(value, *this);
     }
 
@@ -1079,11 +1079,11 @@ template<int Prec2>
         m_value = value;
     }
 
-    decimal<Prec> abs() const {
+    decimal abs() const {
         if (m_value >= 0)
             return *this;
         else
-            return (decimal<Prec>(0) - *this);
+            return (decimal(0) - *this);
     }
 
     /// returns value rounded to integer using active rounding policy
